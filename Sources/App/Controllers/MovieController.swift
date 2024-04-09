@@ -1,14 +1,11 @@
 import Fluent
 import Vapor
 
-struct TodoController: RouteCollection {
+struct MovieController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
         let todos = routes.grouped("todos")
         todos.get(use: index)
-        todos.post(use: create)
-        todos.group(":todoID") { todo in
-            todo.delete(use: delete)
-        }
+        
     }
 
     func index(req: Request) async throws -> [Todo] {
