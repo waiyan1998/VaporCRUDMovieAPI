@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+
+enum Schema  : String
+{
+    case user = "users"
+    case userToken = "user_tokens"
+}
